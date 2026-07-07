@@ -1,0 +1,46 @@
+import { useState } from "react";
+import axios from "axios";
+import "./App.css";
+import { IUser } from "./interfaces";
+import Search from "./components/Search";
+import UserCard from "./components/UserCard";
+
+function App() {
+  const [username, setUsername] = useState("");
+  const [user, setUser] = useState<IUser | null>(null);
+  const [darkMode, setDarkMode] = useState(false);
+
+  const searchUser = async () => {
+    try {
+      const response = await axios.get<IUser>(
+        `https://api.github.com/users/${username}`
+      );
+
+      setUser(response.data);
+    } catch (error) {
+      alert("User not found!");
+      setUser(null);
+    }
+  };
+
+  return (
+    <div className={darkMode ? "dark app" : "light app"}>
+      <button
+        className="theme-button"
+        onClick={() => setDarkMode(!darkMode)}
+      >
+        {darkMode ? "☀️ Light" : "🌙 Dark"}
+      </button>
+
+      <Search
+        username={username}
+        setUsername={setUsername}
+        searchUser={searchUser}
+      />
+
+      <UserCard user={user} />
+    </div>
+  );
+}
+
+export default App;
