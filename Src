@@ -1,0 +1,9 @@
+src/
+├── assets/
+├── components/
+│   ├── Search.tsx
+│   └── UserCard.tsx
+├── interfaces.ts
+├── App.tsx
+├── App.css
+└── main.tsx
