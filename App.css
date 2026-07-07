@@ -1,0 +1,100 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+.app {
+  min-height: 100vh;
+  padding: 40px 20px;
+  transition: 0.3s;
+}
+
+.light {
+  background: #f6f8ff;
+  color: #141d2f;
+}
+
+.dark {
+  background: #141d2f;
+  color: white;
+}
+
+.theme-button {
+  float: right;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+input {
+  width: 100%;
+  max-width: 500px;
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+button {
+  padding: 15px 25px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.user-card {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 15px;
+  background: white;
+  color: #141d2f;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dark .user-card {
+  background: #1f2a48;
+  color: white;
+}
+
+.user-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  border-radius: 10px;
+  background: #f6f8ff;
+}
+
+.dark .stats {
+  background: #141d2f;
+}
+
+.stats div {
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .stats {
+    flex-direction: column;
+  }
+
+  input {
+    margin-bottom: 10px;
+  }
+}
